@@ -1,0 +1,11 @@
+services:
+  development:
+    image: samminhch/testing:development
+    build:
+      context: Docker/
+      dockerfile: Docker/Dockerfile
+      target: base
+    tty: True
+    stdin_open: True
+    volumes:
+      - ./.config:/root/.config
