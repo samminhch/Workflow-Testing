@@ -14,4 +14,5 @@ RUN add-apt-repository ppa:neovim-ppa/unstable -y && \
     curl -sS https://starship.rs/install.sh | sh -s -- -y &> /dev/null
 
 RUN echo "alias apt='nala'" >> /root/.bash_aliases && \
-    echo 'eval "$(starship init bash)"' >> /root/.bashrc
+    echo 'eval "$(starship init bash)"' >> /root/.bashrc && \
+    echo "Complete!"
