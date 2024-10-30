@@ -2,7 +2,7 @@ services:
   development:
     image: samminhch/testing:development
     build:
-      context: Docker/
+      context: .
       dockerfile: Docker/Dockerfile
       target: base
     tty: True
