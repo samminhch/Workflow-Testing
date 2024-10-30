@@ -1,10 +1,12 @@
 FROM ubuntu:22.04 as development
 
+ENV DEBIAN_FRONTEND=noninteractive
+ENV TZ='America/Chicago'
 SHELL ["/bin/bash", "-c"]
 RUN sed -r -i 's,http://(.*).ubuntu.com,http://mirror.us-tx.kamatera.com,' /etc/apt/sources.list
 
 RUN apt-get update && apt-get upgrade && apt-get --no-install-recommends -y install \
-    curl git zsh software-properties-common gnupg && \
+    curl git zsh software-properties-common gnupg tzdata && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN add-apt-repository ppa:neovim-ppa/unstable -y && \
