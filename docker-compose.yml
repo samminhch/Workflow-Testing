@@ -4,7 +4,7 @@ services:
     build:
       context: .
       dockerfile: Docker/Dockerfile
-      target: base
+      target: development
     tty: True
     stdin_open: True
     volumes:
